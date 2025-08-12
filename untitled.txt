@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>YourApp — लॉगिन</title>
+  <style>
+    :root{
+      --bg: #f2f5f8;
+      --card: #ffffff;
+      --accent: #2563eb;
+      --muted: #6b7280;
+      --radius:14px;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+      background: linear-gradient(180deg, #e9f0ff 0%, var(--bg) 100%);
+      color:#111827;
+    }
+    .wrap{
+      width:100%; max-width:420px; padding:20px;
+    }
+    .card{
+      background:var(--card); border-radius:var(--radius); box-shadow:0 8px 30px rgba(6,15,30,0.08);
+      overflow:hidden;
+    }
+    .left{
+      padding:28px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; margin-bottom:18px;
+    }
+    .logo{
+      width:52px; height:52px; border-radius:12px; background:linear-gradient(135deg,#60a5fa,#2563eb);
+      display:flex; align-items:center; justify-content:center; color:white; font-weight:700;
+      font-size:20px;
+    }
+    h1{margin:0; font-size:20px}
+    p.lead{margin:8px 0 18px; color:var(--muted); font-size:14px}
+    form{display:flex; flex-direction:column; gap:12px}
+    input[type="text"], input[type="password"]{
+      padding:12px 14px; border-radius:10px; border:1px solid #e6eefb; font-size:15px;
+      outline: none; background:#fbfdff;
+    }
+    input[type="text"]:focus, input[type="password"]:focus{ box-shadow:0 0 0 4px rgba(37,99,235,0.06); border-color:var(--accent) }
+    .row{display:flex; align-items:center; justify-content:space-between; font-size:13px; color:var(--muted)}
+    .btn{
+      background:var(--accent); color:white; padding:12px 14px; border-radius:10px; border:0; font-weight:600;
+      cursor:pointer; font-size:15px;
+    }
+    .mutebtn{background:transparent;border:0;color:var(--accent);cursor:pointer;font-weight:600}
+    .separator{display:flex;align-items:center;gap:10px;margin:18px 0}
+    .separator::before,.separator::after{content:"";flex:1;height:1px;background:#eef3fb;border-radius:2px}
+    .alt{font-size:13px;color:var(--muted); text-align:center}
+    .footer{padding:16px;background:#fafbff; text-align:center; color:var(--muted); font-size:13px}
+    @media(max-width:420px){
+      .left{padding:18px}
+      .logo{width:48px;height:48px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="left">
+        <div class="brand">
+          <div class="logo">YA</div>
+          <div>
+            <h1>YourApp</h1>
+            <div style="color:var(--muted);font-size:13px">अपना अकाउंट में लॉगिन करें</div>
+          </div>
+        </div>
+
+        <form onsubmit="event.preventDefault(); fakeSubmit();">
+          <input type="text" id="user" placeholder="ईमेल या यूज़रनेम" autocomplete="username" required />
+          <input type="password" id="pass" placeholder="पासवर्ड" autocomplete="current-password" required />
+          <div class="row">
+            <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)">
+              <input type="checkbox" id="remember" /> याद रखें
+            </label>
+            <a href="#" style="color:var(--accent);font-size:13px;text-decoration:none">पासवर्ड भूल गए?</a>
+          </div>
+          <button class="btn" type="submit">लॉगिन</button>
+        </form>
+
+        <div class="separator"><span class="alt">या</span></div>
+
+        <div style="display:flex;gap:8px;justify-content:center;padding-bottom:8px">
+          <button class="mutebtn" onclick="alert('यह सिर्फ़ डेमो है')">Continue with Google</button>
+        </div>
+      </div>
+
+      <div class="footer">
+        नया यूज़र? <a href="#" style="color:var(--accent);text-decoration:none">साइन अप करें</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function fakeSubmit(){
+      // इस demo में डेटा कहीं नहीं भेजा जाता — सिर्फ़ एक नोटिफिकेशन दिखाते हैं
+      const u = document.getElementById('user').value;
+      alert('प्रीव्यू: आप लॉगिन बटन दबा रहे हैं — (demo)\\nयूज़र: ' + (u || '(खाली)') );
+    }
+  </script>
+</body>
+</html>
