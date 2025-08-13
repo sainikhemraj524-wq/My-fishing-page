@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PhonePe Clone</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+    }
+    /* Top header */
+    .header {
+        background-color: #6c2dc7;
+        color: white;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+    }
+    .header img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    .header .location {
+        flex: 1;
+    }
+    .header .icons i {
+        font-size: 20px;
+        margin-left: 15px;
+        cursor: pointer;
+    }
+    /* Section styling */
+    .section {
+        background: white;
+        padding: 10px;
+        margin: 8px;
+        border-radius: 10px;
+    }
+    .section h3 {
+        margin: 10px 0;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        text-align: center;
+    }
+    .grid div {
+        cursor: pointer;
+    }
+    .grid i {
+        font-size: 28px;
+        color: #6c2dc7;
+        background: #f0e6ff;
+        padding: 12px;
+        border-radius: 50%;
+        margin-bottom: 5px;
+    }
+    /* Bottom nav */
+    .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: white;
+        display: flex;
+        justify-content: space-around;
+        padding: 8px 0;
+        border-top: 1px solid #ccc;
+    }
+    .bottom-nav div {
+        text-align: center;
+        color: #6c2dc7;
+    }
+    .bottom-nav i {
+        font-size: 24px;
+    }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <img src="https://i.pravatar.cc/100" alt="Profile">
+    <div class="location">
+        <b>Bangalore</b><br>
+        <small>Green Glen Layout</small>
+    </div>
+    <div class="icons">
+        <i class="fa-regular fa-bell"></i>
+        <i class="fa-regular fa-circle-question"></i>
+    </div>
+</div>
+
+<!-- Transfer Money -->
+<div class="section">
+    <div class="grid">
+        <div onclick="alert('To Mobile Clicked')">
+            <i class="fa-solid fa-user"></i>
+            <div>To Mobile</div>
+        </div>
+        <div onclick="alert('To Bank/UPI Clicked')">
+            <i class="fa-solid fa-building-columns"></i>
+            <div>To Bank/UPI</div>
+        </div>
+        <div onclick="alert('To Self Clicked')">
+            <i class="fa-solid fa-arrow-rotate-left"></i>
+            <div>To Self</div>
+        </div>
+        <div onclick="checkBalance()">
+            <i class="fa-solid fa-landmark"></i>
+            <div>Check Balance</div>
+        </div>
+    </div>
+</div>
+
+<!-- Wallet and Rewards -->
+<div class="section">
+    <div class="grid">
+        <div onclick="alert('Wallet Clicked')">
+            <i class="fa-solid fa-wallet"></i>
+            <div>Wallet</div>
+        </div>
+        <div onclick="alert('Rewards Clicked')">
+            <i class="fa-solid fa-gift"></i>
+            <div>Rewards</div>
+        </div>
+        <div onclick="alert('Refer & Earn Clicked')">
+            <i class="fa-solid fa-bullhorn"></i>
+            <div>Refer & Earn</div>
+        </div>
+    </div>
+</div>
+
+<!-- Recharge & Bills -->
+<div class="section">
+    <h3>Recharge & Pay Bills</h3>
+    <div class="grid">
+        <div onclick="alert('Recharge Clicked')">
+            <i class="fa-solid fa-bolt"></i>
+            <div>Recharge</div>
+        </div>
+        <div onclick="alert('Rent Clicked')">
+            <i class="fa-solid fa-house"></i>
+            <div>Rent</div>
+        </div>
+        <div onclick="alert('Electricity Clicked')">
+            <i class="fa-solid fa-lightbulb"></i>
+            <div>Electricity</div>
+        </div>
+        <div onclick="alert('Credit Card Clicked')">
+            <i class="fa-solid fa-credit-card"></i>
+            <div>Credit Card</div>
+        </div>
+    </div>
+</div>
+
+<!-- Loan -->
+<div class="section">
+    <h3>Loan</h3>
+    <div class="grid">
+        <div onclick="alert('Credit Score Clicked')">
+            <i class="fa-solid fa-chart-line"></i>
+            <div>Credit Score</div>
+        </div>
+        <div onclick="alert('Bike Loan Clicked')">
+            <i class="fa-solid fa-motorcycle"></i>
+            <div>Bike Loan</div>
+        </div>
+        <div onclick="alert('Mutual Fund Loan Clicked')">
+            <i class="fa-solid fa-sack-dollar"></i>
+            <div>Mutual Fund Loan</div>
+        </div>
+        <div onclick="alert('Home Loan Clicked')">
+            <i class="fa-solid fa-house-chimney"></i>
+            <div>Home Loan</div>
+        </div>
+    </div>
+</div>
+
+<!-- Bottom Nav -->
+<div class="bottom-nav">
+    <div>
+        <i class="fa-solid fa-house"></i><br>Home
+    </div>
+    <div>
+        <i class="fa-solid fa-qrcode"></i><br>Scan
+    </div>
+    <div>
+        <i class="fa-solid fa-clock-rotate-left"></i><br>History
+    </div>
+</div>
+
+<script>
+function checkBalance() {
+    let pin = prompt("Enter your UPI PIN:");
+    if (pin === "3473") {
+        alert("Your balance is ₹6,00,000");
+    } else {
+        alert("Incorrect PIN");
+    }
+}
+</script>
+
+</body>
+</html>
